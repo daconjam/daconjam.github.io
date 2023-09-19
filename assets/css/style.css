@@ -45,6 +45,29 @@ body {
   cursor: pointer;
 }
 
+.collapsible {
+  background-color: #a43f49;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #1e4356;
+}
+
+.content {
+  transition: max-height 0.2s ease-out;
+  display: none;
+  overflow: hidden;
+  background-color: #2222;
+}
+
 input,
 select,
 textarea {
@@ -60,6 +83,13 @@ p {
     font-size: 16px;
     line-height: 24px;
     color: #fff;
+}
+
+p.capitalize {
+  margin-top: 1vw;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 h4 {
