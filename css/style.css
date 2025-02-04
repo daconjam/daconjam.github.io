@@ -55,6 +55,29 @@ figure {
       figure figcaption {
         width: 100%; } }
 
+/* Ensure the iframe is responsive */
+.responsive-iframe {
+    width: 100%;  /* Full width */
+    max-width: 100%;  /* Ensure it doesn't exceed container's width */
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    width: 100%;   /* Makes iframe fill the width of the container */
+    min-height: 600px;  /* Set a minimum height, adjust as needed */
+    height: 80vh;  /* Adjust height based on viewport height */
+    border: none;   /* Remove border */
+    display: block; /* Prevents any unwanted gaps */
+}
+
+/* Allow the document to scroll on mobile */
+@media (max-width: 767px) {
+    .responsive-iframe iframe {
+        height: 70vh;  /* Adjust height for mobile screens */
+    }
+}
+
+
 ::-webkit-selection {
   color: #fff;
   background: #2c98f0; }
@@ -1039,16 +1062,26 @@ body.offcanvas {
 .btn-load-more {
   width: 100%; }
 
+
 #colorlib-counter {
   position: relative;
   clear: both;
   margin-bottom: 5em; }
 
+/* Adjust on smaller screens */
+@media screen and (max-width: 768px) {
+  .colorlib-counters {
+    background-size: auto 100%;        /* Scales the background image only by height */
+    background-position: center center;
+    background-attachment: scroll;     /* Disables fixed position on smaller screens */
+  }
+}
+
 .colorlib-counters {
   padding: 10em 0;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center center; }
+  background-position: 50% 50%; }
   .colorlib-counters .overlay {
     z-index: 0;
     position: absolute;
@@ -1065,7 +1098,7 @@ body.offcanvas {
     margin-bottom: 20px; }
     .colorlib-counters .icon i {
       display: table-cell;
-      vertical-align: middle;
+      vertical-align: center;
       width: 100px;
       height: 100px;
       font-size: 50px;
@@ -1092,6 +1125,7 @@ body.offcanvas {
     letter-spacing: 5px;
     margin-bottom: 2em;
     display: block; }
+
 
 .colorlib-social {
   padding: 0;
