@@ -17,6 +17,15 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
+  <script>
+    (function() {
+      const storedTheme = localStorage.getItem('theme');
+      const theme = storedTheme || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.body && document.body.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -54,10 +63,13 @@
         <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="index.html#research"><i class="bi bi-hdd-stack navicon"></i> Research</a></li>
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index.html#skills"><i class="bi bi-bar-chart navicon"></i> Skills</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+      <i class="bi bi-moon-stars"></i>
+    </button>
 
     <div class="social-links text-center">
       <a href="mailto:jamell.dacon@morgan.edu"><i class="bi bi-envelope"></i></a>

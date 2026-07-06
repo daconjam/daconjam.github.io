@@ -10,6 +10,37 @@
   "use strict";
 
   /**
+   * Theme toggle
+   */
+  const root = document.documentElement;
+  const body = document.body;
+  const themeToggle = document.querySelector('#theme-toggle');
+  const storedTheme = localStorage.getItem('theme');
+  const initialTheme = storedTheme || 'light';
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    body.setAttribute('data-theme', theme);
+    if (themeToggle) {
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'bi bi-moon-stars' : 'bi bi-sun';
+      }
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  }
+
+  /**
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
