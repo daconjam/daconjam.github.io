@@ -117,6 +117,73 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.news-section {
+  margin-top: 2rem;
+}
+
+.news-accordion .accordion-item {
+  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: transparent;
+}
+
+.news-accordion .accordion-button {
+  background-color: var(--surface-color);
+  color: var(--heading-color);
+  font-weight: 600;
+  box-shadow: none;
+  padding: 1rem 1.25rem;
+}
+
+.news-accordion .accordion-button:not(.collapsed) {
+  background-color: color-mix(in srgb, var(--surface-color), white 6%);
+  color: var(--heading-color);
+}
+
+.news-accordion .accordion-button::after {
+  filter: none;
+}
+
+.news-accordion .accordion-body {
+  background-color: var(--surface-color);
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  line-height: 1.7;
+  color: var(--default-color);
+}
+
+.news-item a {
+  color: var(--accent-color);
+}
+
+.news-item a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+.news-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-date {
+  display: inline-block;
+  margin-right: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  min-width: 5.25rem;
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
