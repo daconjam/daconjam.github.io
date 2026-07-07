@@ -42,6 +42,9 @@
   --nav-color: #1f2937;
   --nav-hover-color: #b87300;
   --nav-mobile-background-color: #f3f4f6;
+  --nav-background-color: #f8fafc;
+  --nav-active-background-color: color-mix(in srgb, var(--accent-color), transparent 84%);
+  --nav-border-color: color-mix(in srgb, var(--default-color), transparent 88%);
   --nav-dropdown-background-color: #ffffff;
   --nav-dropdown-color: #1f2937;
   --nav-dropdown-hover-color: #b87300;
@@ -51,6 +54,9 @@
   --nav-color: #f3f4f6;
   --nav-hover-color: #FFB000;
   --nav-mobile-background-color: #38485f;
+  --nav-background-color: #38485f;
+  --nav-active-background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  --nav-border-color: color-mix(in srgb, var(--default-color), transparent 80%);
   --nav-dropdown-background-color: #38485f;
   --nav-dropdown-color: #f3f4f6;
   --nav-dropdown-hover-color: #FFB000;
@@ -241,7 +247,9 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--nav-background-color);
+  border-right: 1px solid var(--nav-border-color);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
   position: fixed;
   top: 0;
   left: 0;
@@ -369,11 +377,14 @@ h6 {
 }
 
 .navmenu {
-  padding: 0;
+  padding: 8px 6px;
   z-index: 9997;
   flex: 1;
   display: flex;
   align-items: center;
+  background-color: var(--nav-background-color);
+  border: 1px solid var(--nav-border-color);
+  border-radius: 16px;
 }
 
 .navmenu ul {
@@ -386,6 +397,8 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
+  background-color: transparent;
+  border-radius: 12px;
   padding: 15px 10px;
   font-family: var(--nav-font);
   font-size: 16px;
@@ -429,6 +442,7 @@ h6 {
 .navmenu .active,
 .navmenu .active:focus {
   color: var(--nav-hover-color);
+  background-color: var(--nav-active-background-color);
 }
 
 .navmenu a:hover .navicon,
